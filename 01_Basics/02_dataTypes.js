@@ -2,8 +2,8 @@
 
 // alert(3+3) we are using nodejs not browser
 
-console.log(3+3); 
-console.log("Suraj")
+// console.log(3+3); 
+// console.log("Suraj")
 
 let name = "suraj" // string
 let age = 18 // number [range is 2^53]
@@ -17,3 +17,8 @@ let isLogged = false // boolean
 // undefined
 // Symbol
 // 
+
+// objects
+
+console.log(typeof null) // object
+console.log(typeof undefined) // undefined
