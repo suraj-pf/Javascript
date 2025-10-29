@@ -51,3 +51,25 @@ let func_name = function(){
 
 console.log(func_name(),typeof func_name); // function
 
+// Stack -- Primitive -- Copy of Original Data
+// Heap -- Non - Primitive - Reference
+
+let myName = "Suraj "
+
+let anotherName = myName 
+anotherName = "More"
+console.log(myName,anotherName); // data is different in both as it is primitve and non refrential and rather a copy is provided
+// console.log(id(myName),id(anotherName));
+
+let user1 = {
+    name : "suraj",
+    age : 23
+}
+
+let user2 = user1
+
+user2.name = "changed"
+
+// here since we changed the data in user2 but as non primitive is a refrenctial typr so the data gets changed in user1 too 
+
+console.log(user1.name,user2.name);
