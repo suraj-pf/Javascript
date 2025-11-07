@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | learning </title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    
+    <div class="parent">
+        <div class="day"> Monday </div>
+        <div class="day"> Tuesday </div>
+        <div class="day"> Wenesday </div>
+        <div class="day"> Thursday </div>    
+    </div>
+</body>
+<script>
+    let parent = document.querySelector('.parent')
+    
+    console.log(parent);
+    console.log(parent.children); // returns HTMLCollection
+    console.log(parent.children[0]); // returns first element of the childrens that is monday element
+    console.log(parent.children[0].innerHTML);
+    console.log(parent.children[0].innerText);
+    console.log(parent.children[0].textContent);
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+    }
+
+    parent.children[0 ].style.color = 'orange'
+
+    console.log(parent.firstElementChild); // returns first children of the parent element
+    console.log(parent.firstElementChild.innerHTML);
+    
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);
+
+/* 
+    1. Return Type	 
+
+    parentNode:- Returns a Node object (which can be an Element, Document, DocumentFragment, Text, Comment, etc.).	
+
+    parentElement:- Returns an Element object.
+    
+    2. Returns null When Returns 
+
+    parentNode:- null if the node has no parent (e.g., a newly created node not attached to the DOM) or if the node itself is a Document or DocumentFragment.	
+    
+    parentElement:- Returns null if the node has no parent or if its parent is not an Element (e.g., the parent is the Document node).
+
+    3. Common Use Cases	
+    
+    parentNode:- Used when you need the absolute parent in the DOM tree, which might be the Document object for the <html> element.	
+
+    parentElement:- Often used in general DOM traversal when you specifically need to interact with the parent as an HTML element (e.g., calling element-specific methods).
+
+ */
+
+    console.log('ParentNode',dayOne.parentNode); 
+    console.log('ParentNode',dayOne.parentElement); 
+    
+    
+    /* 
+    The fundamental difference between nextElementSibling and nextSibling in JavaScript's Document Object Model (DOM) lies in the types of nodes they return: 
+
+    nextElementSibling: This property returns the next sibling node that is an element. It specifically ignores text nodes (including whitespace between elements), comment nodes, and other non-element node types. If there is no next element sibling, it returns null.
+    
+    nextSibling: This property returns the next sibling node of any type. This means it can return an element node, a text node (which often includes whitespace between HTML tags), or a comment node. If there is no next sibling node, it returns null.
+    */
+
+    console.log('Next Element Sibling',dayOne.nextElementSibling);
+    console.log('Next Sibling',dayOne.nextSibling);
+
+    console.log("child:-",parent.childNodes);
+    // react id based on thiss child nodes element
+    
+</script>
+</html>
