@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Projects</title>
+</head>
+<body>
+    <h2>Code and talks</h2>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <script>
+        // We'll store the ID returned by setInterval in this variable.
+        // This allows us to later stop that specific interval using clearInterval().
+        let intervalId = null;
+
+        // This function is what we want to repeatedly run.
+        // It just prints a string to the console.
+        const sayMyName = function(str) {
+            console.log(str);
+        }
+
+        // Add a click listener to the "Start" button
+        document.querySelector('#start').addEventListener('click', function() {
+            
+            // If an interval is already running, we don't want to start another one.
+            // This prevents multiple intervals printing "hi" at the same time.
+            if (intervalId) {
+                console.log('Already printing...');
+                return;
+            }
+
+            console.log('Started printing');
+            
+            // Start the repeating action: sayMyName runs every 3 seconds with argument "hi".
+            // We store the interval's ID in intervalId so we can stop it later.
+            intervalId = setInterval(sayMyName, 3000, "hi");
+        });
+
+        // Add a click listener to the "Stop" button
+        document.querySelector('#stop').addEventListener('click', function() {
+            
+            // Only stop the interval if one is currently running.
+            if (intervalId) {
+                // clearInterval() stops the repeating action.
+                clearInterval(intervalId);
+
+                // Set intervalId back to null to indicate that no interval is active.
+                intervalId = null;
+
+                console.log('Stopped printing');
+            } else {
+                // If user clicks Stop without starting, show this message.
+                console.log('Nothing to stop');
+            }
+        });
+    </script>
+</body>
+</html>

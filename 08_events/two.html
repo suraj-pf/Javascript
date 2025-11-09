@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Projects</title>
+</head>
+<body>
+    <h2>Code and talks</h2>
+    <button id="stop">stop</button>
+    <script>
+        // setTimeout(/*handler:function*/ function () {
+        //     console.log('Suraj')
+        // },2000) // time in mili seconds
+        function nameCaller() {
+            console.log('Suraj')
+        }
+        setTimeout(nameCaller,2000)
+
+        // setInterval(nameCaller,1000) // does specific task within a set time of interval
+
+        const changeHeading = function () {
+            document.querySelector('h2').innerHTML = 'Suraj Talks'
+        }
+        const changeMe = setTimeout(changeHeading,2000)
+
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearTimeout(changeMe)
+            console.log("Stopped");
+            
+        })
+    </script>
+</body>
+</html>
