@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    
+</body>
+<script>
+
+    const requestedURL = 'https://randomuser.me/api/'
+
+    const xhr = new XMLHttpRequest()
+
+    xhr.open("GET",requestedURL)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+    }
+    xhr.send();
+
+</script>
+</html>
